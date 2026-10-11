@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
 import Attendance from './pages/Attendance';
 import Leave from './pages/Leave';
+import Tasks from './pages/Tasks';
 
 function Protected({ children }) {
   const { user } = useAuth();
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="employees" element={<Employees />} />
           <Route path="attendance" element={<Attendance />} />
           <Route path="leave" element={<Leave />} />
+          <Route path="tasks" element={<Tasks />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
