@@ -36,7 +36,9 @@ public class Employee {
 
     private String phone;
     private String jobTitle;
-    private String department;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
     private BigDecimal baseSalary;
     private LocalDate hireDate;
     private String status = "ACTIVE";
