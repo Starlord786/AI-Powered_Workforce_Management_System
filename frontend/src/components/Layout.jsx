@@ -17,6 +17,7 @@ export default function Layout() {
         <nav>
           <NavLink to="/" end>Dashboard</NavLink>
           <NavLink to="/employees">Employees</NavLink>
+          <NavLink to="/attendance">Attendance</NavLink>
         </nav>
         <div className="userbox">
           <div>{user.email}</div>

@@ -25,4 +25,8 @@ public class AppUser {
     private Role role;
 
     private boolean active = true;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }
