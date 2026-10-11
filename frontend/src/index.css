@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f3f4f6; color: #1f2937; }
+h1 { margin-top: 0; }
+.muted { color: #6b7280; }
+.error { background: #fee2e2; color: #b91c1c; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+button { background: #2563eb; color: #fff; border: 0; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+button:hover { background: #1d4ed8; }
+button:disabled { opacity: .6; cursor: default; }
+button.danger { background: #dc2626; padding: 5px 10px; }
+input, select { padding: 9px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; width: 100%; }
+
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.login-card { background: #fff; padding: 32px; border-radius: 12px; width: 360px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+.login-card h1 { font-size: 22px; margin-bottom: 0; }
+.login-card label { font-size: 13px; margin-top: 6px; }
+.login-card button { margin-top: 14px; }
+
+.app { display: flex; min-height: 100vh; }
+.sidebar { width: 230px; background: #111827; color: #fff; padding: 20px; display: flex; flex-direction: column; }
+.sidebar h2 { margin-top: 0; }
+.sidebar nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.sidebar nav a { color: #d1d5db; text-decoration: none; padding: 10px 12px; border-radius: 6px; }
+.sidebar nav a.active { background: #2563eb; color: #fff; }
+.userbox { font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
+.userbox small { color: #9ca3af; }
+.content { flex: 1; padding: 28px; overflow-x: auto; }
+
+.cards { display: flex; gap: 16px; margin-top: 16px; }
+.card { background: #fff; padding: 20px 28px; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.card .num { font-size: 32px; font-weight: 700; }
+
+.panel { background: #fff; padding: 18px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.panel h3 { margin-top: 0; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid #e5e7eb; font-size: 14px; }
+th { background: #f9fafb; }
