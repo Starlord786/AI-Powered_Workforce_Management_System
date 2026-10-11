@@ -53,3 +53,10 @@ h2 { margin-top: 28px; }
 .tag.LOW { background: #dcfce7; color: #166534; }
 .task-actions { display: flex; gap: 6px; flex-wrap: wrap; }
 .task-actions button { padding: 4px 10px; font-size: 12px; }
+
+@media print {
+  body * { visibility: hidden; }
+  .payslip, .payslip * { visibility: visible; }
+  .payslip { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; }
+  .no-print { display: none !important; }
+}
