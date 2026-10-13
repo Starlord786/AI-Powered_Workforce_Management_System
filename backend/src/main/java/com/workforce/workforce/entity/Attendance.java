@@ -31,4 +31,5 @@ public class Attendance {
     private String method = "MANUAL";
     private String status = "PRESENT";
     private Double workHours;
+    private Double confidence;   // face match confidence (0-1), null for manual
 }

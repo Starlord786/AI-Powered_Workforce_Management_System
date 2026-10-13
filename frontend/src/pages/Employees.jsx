@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../api';
 import { useAuth } from '../AuthContext';
+import FaceRegister from '../components/FaceRegister';
 
 const empty = {
   employeeCode: '', firstName: '', lastName: '', email: '',
@@ -15,6 +16,8 @@ export default function Employees() {
   const [form, setForm] = useState(empty);
   const [error, setError] = useState('');
   const [denied, setDenied] = useState(false);
+  const [faces, setFaces] = useState({});
+  const [registering, setRegistering] = useState(null);
 
   async function load() {
     try {
@@ -26,7 +29,15 @@ export default function Employees() {
     }
   }
 
-  useEffect(() => { load(); }, []);
+  async function loadFaces() {
+    if (!canEdit) return;
+    try {
+      const r = await api.get('/api/faces/status');
+      setFaces(r.data);
+    } catch (err) { /* ignore */ }
+  }
+
+  useEffect(() => { load(); loadFaces(); }, []);
 
   function change(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -90,7 +101,7 @@ export default function Employees() {
         <thead>
           <tr>
             <th>Code</th><th>Name</th><th>Email</th><th>Job title</th>
-            <th>Department</th><th>Status</th>{canEdit && <th></th>}
+            <th>Department</th><th>Status</th>{canEdit && <th>Face</th>}{canEdit && <th></th>}
           </tr>
         </thead>
         <tbody>
@@ -102,11 +113,26 @@ export default function Employees() {
               <td>{e.jobTitle}</td>
               <td>{e.department?.name || '-'}</td>
               <td>{e.status}</td>
+              {canEdit && (
+                <td>
+                  {faces[e.id] ? `${faces[e.id]} photos` : 'Not registered'}{' '}
+                  <button onClick={() => setRegistering(e)} style={{ padding: '4px 10px', fontSize: 12 }}>
+                    {faces[e.id] ? 'Add photos' : 'Register face'}
+                  </button>
+                </td>
+              )}
               {canEdit && <td><button className="danger" onClick={() => remove(e.id)}>Delete</button></td>}
             </tr>
           ))}
         </tbody>
       </table>
+
+      {registering && (
+        <FaceRegister
+          employee={registering}
+          onClose={() => { setRegistering(null); loadFaces(); }}
+        />
+      )}
     </div>
   );
 }

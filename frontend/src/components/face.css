@@ -1,0 +1,8 @@
+.cam { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.cam video { width: 100%; max-width: 480px; border-radius: 10px; background: #111827; transform: scaleX(-1); }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 50; }
+.modal { background: #fff; padding: 22px; border-radius: 12px; width: 540px; max-width: 95vw; }
+.modal h3 { margin-top: 0; }
+.modal-actions { display: flex; gap: 10px; align-items: center; }
+button.secondary { background: #6b7280; }
+button.secondary:hover { background: #4b5563; }
