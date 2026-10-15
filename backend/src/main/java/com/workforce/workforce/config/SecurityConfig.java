@@ -58,6 +58,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/payroll").hasAnyRole("ADMIN", "HR")
                 .requestMatchers(HttpMethod.POST, "/api/payroll/**").hasAnyRole("ADMIN", "HR")
                 .requestMatchers(HttpMethod.PUT, "/api/payroll/**").hasAnyRole("ADMIN", "HR")
+                .requestMatchers(HttpMethod.POST, "/api/shifts/generate").hasAnyRole("ADMIN", "HR")
+                .requestMatchers(HttpMethod.PUT, "/api/shifts/**").hasAnyRole("ADMIN", "HR")
+                .requestMatchers(HttpMethod.GET, "/api/shifts/roster").hasAnyRole("ADMIN", "HR", "MANAGER")
                 .anyRequest().authenticated())
             .oauth2ResourceServer(o -> o.jwt(j -> j.jwtAuthenticationConverter(converter())));
         return http.build();

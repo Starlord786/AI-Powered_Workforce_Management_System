@@ -1,0 +1,18 @@
+{
+  "dates": ["2026-10-19","2026-10-20","2026-10-21","2026-10-22","2026-10-23","2026-10-24","2026-10-25"],
+  "shifts": [
+    {"id": 1, "name": "Morning", "start": "06:00", "end": "14:00", "required": 2},
+    {"id": 2, "name": "Evening", "start": "14:00", "end": "22:00", "required": 2},
+    {"id": 3, "name": "Night",   "start": "22:00", "end": "06:00", "required": 1}
+  ],
+  "employees": [
+    {"id": 1, "name": "Ali", "preferred_shift_ids": [1]},
+    {"id": 2, "name": "Sara"},
+    {"id": 3, "name": "Omar", "unavailable": ["2026-10-20", "2026-10-21"]},
+    {"id": 4, "name": "Zain"},
+    {"id": 5, "name": "Hina"},
+    {"id": 6, "name": "Bilal"},
+    {"id": 7, "name": "Maya"},
+    {"id": 8, "name": "Faraz"}
+  ]
+}

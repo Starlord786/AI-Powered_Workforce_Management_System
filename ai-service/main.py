@@ -60,3 +60,7 @@ async def match(file: UploadFile = File(...), known: str = Form(...)):
             "confidence": round(float(1 - distances[best]), 3),
         }
     return {"match": False, "reason": "Face not recognised"}
+
+
+from scheduler import router as scheduler_router
+app.include_router(scheduler_router)

@@ -7,3 +7,4 @@ Pillow
 dlib
 face_recognition
 setuptools<81
+ortools

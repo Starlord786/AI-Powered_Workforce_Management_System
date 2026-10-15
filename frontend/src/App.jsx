@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
 import Payroll from './pages/Payroll';
+import Shifts from './pages/Shifts';
 import Attendance from './pages/Attendance';
 import Leave from './pages/Leave';
 import Tasks from './pages/Tasks';
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/" element={<Protected><Layout /></Protected>}>
           <Route index element={<Dashboard />} />
           <Route path="payroll" element={<Payroll />} />
+          <Route path="shifts" element={<Shifts />} />
           <Route path="employees" element={<Employees />} />
           <Route path="attendance" element={<Attendance />} />
           <Route path="leave" element={<Leave />} />
