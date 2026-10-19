@@ -9,6 +9,7 @@ import Shifts from './pages/Shifts';
 import Attendance from './pages/Attendance';
 import Leave from './pages/Leave';
 import Tasks from './pages/Tasks';
+import Attrition from './pages/Attrition';
 
 function Protected({ children }) {
   const { user } = useAuth();
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="attendance" element={<Attendance />} />
           <Route path="leave" element={<Leave />} />
           <Route path="tasks" element={<Tasks />} />
+          <Route path="attrition" element={<Attrition />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

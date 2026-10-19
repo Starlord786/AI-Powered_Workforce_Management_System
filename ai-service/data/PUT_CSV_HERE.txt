@@ -1,0 +1,1 @@
+Put WA_Fn-UseC_-HR-Employee-Attrition.csv (IBM HR Analytics, from Kaggle) in this folder.

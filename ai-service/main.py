@@ -64,3 +64,6 @@ async def match(file: UploadFile = File(...), known: str = Form(...)):
 
 from scheduler import router as scheduler_router
 app.include_router(scheduler_router)
+
+from attrition_service import router as attrition_router
+app.include_router(attrition_router)

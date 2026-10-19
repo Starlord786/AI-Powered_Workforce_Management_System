@@ -8,3 +8,7 @@ dlib
 face_recognition
 setuptools<81
 ortools
+pandas
+scikit-learn
+joblib
+matplotlib
