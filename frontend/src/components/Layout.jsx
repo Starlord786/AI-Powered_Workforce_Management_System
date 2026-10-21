@@ -22,6 +22,7 @@ export default function Layout() {
           <NavLink to="/tasks">Tasks</NavLink>
           <NavLink to="/payroll">Payroll</NavLink>
         <NavLink to="/shifts">Shifts</NavLink>
+          <NavLink to="/chat">Assistant</NavLink>
           {['ADMIN', 'HR'].includes(user.role) && <NavLink to="/attrition">Attrition</NavLink>}
         </nav>
         <div className="userbox">

@@ -7,3 +7,6 @@ __pycache__/
 .vscode/
 .env
 dist/
+backend/src/main/resources/application.properties
+ai-service/data/*.csv
+frontend/release/

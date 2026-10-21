@@ -10,6 +10,7 @@ import Attendance from './pages/Attendance';
 import Leave from './pages/Leave';
 import Tasks from './pages/Tasks';
 import Attrition from './pages/Attrition';
+import Chat from './pages/Chat';
 
 function Protected({ children }) {
   const { user } = useAuth();
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="leave" element={<Leave />} />
           <Route path="tasks" element={<Tasks />} />
           <Route path="attrition" element={<Attrition />} />
+          <Route path="chat" element={<Chat />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
