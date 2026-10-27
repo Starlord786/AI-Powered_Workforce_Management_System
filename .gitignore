@@ -1,12 +1,32 @@
+# Dependencies / build output
 node_modules/
 target/
 venv/
 __pycache__/
-*.pkl
+dist/
+frontend/release/
+
+# IDE
 .idea/
 .vscode/
+
+# Secrets - never commit these
 .env
-dist/
-backend/src/main/resources/application.properties
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+application-local.properties
+application-secret*.properties
+
+# Large / generated data
+*.pkl
 ai-service/data/*.csv
-frontend/release/
+
+# Ignore generated Python model files
+*.pkl
+
+# Allow safe environment templates
+!.env.example

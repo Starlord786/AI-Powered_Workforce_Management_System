@@ -21,6 +21,10 @@ public class JwtConfig {
     private String secret;
 
     private SecretKey key() {
+        if (secret == null || secret.getBytes(StandardCharsets.UTF_8).length < 32) {
+            throw new IllegalStateException(
+                "JWT_SECRET must be set and at least 32 characters long (see backend/.env.example)");
+        }
         return new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
     }
 
